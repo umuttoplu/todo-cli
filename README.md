@@ -1,33 +1,39 @@
 # todo-cli
-todo application for cli
-
-status codes in db:
-status:0 => undone 
-status=1 => completed
 
 ---
 
-to show all todos:
-python3 todocli.py show
-python3 todocli.py show --status=2
+show all todos
 
-to show undone todos:
-python3 todocli.py show --status=0
+	python3 todocli.py show
 
-to show completed todos: 
-python3 todocli.py show --status=2
+	python3 todocli.py show --status=2
+---
 
-to add new todo:
-python3 todocli.py add "Adding new item to list" "Self-Learning"
+show undone todos:
 
-to delete given item #:
-python3 todocli.py delete 1
+	python3 todocli.py show --status=0
+---
+show completed todos: 
 
-to update given item #:
-python3 todocli.py update 5 "add show_undone function" "Self-Learning"
+	python3 todocli.py show --status=2
+---
 
-to complete given item #:
-python3 todocli.py undone 3  
+add new todo:
 
-to undone an item:
-python3 todocli.py undone 20
+	python3 todocli.py add "Adding new item to list" "Self-Learning"
+---
+delete given item #:
+
+	python3 todocli.py delete 1
+---
+update given item #:
+
+	python3 todocli.py update 5 "add show_undone function" "Self-Learning"
+---
+complete given item #:
+
+	python3 todocli.py undone 3  
+---
+undone an item:
+
+	python3 todocli.py undone 20
