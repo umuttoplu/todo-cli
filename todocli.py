@@ -3,7 +3,8 @@ import typer
 from rich.console import Console
 from rich.table import Table
 from model import Todo
-from database import get_all_todos, delete_todo, insert_todo, complete_todo, update_todo, undone_todo, get_undone_todos
+from database import get_all_todos, delete_todo, insert_todo, complete_todo, update_todo, undone_todo, get_undone_todos, \
+    get_completed_todos
 
 console = Console()
 
@@ -49,10 +50,12 @@ def undone(position: int):
 
 @app.command(short_help='shows undone / all todos')
 @click.option('--status', prompt='Status type',
-              help="0 for undone, 1 for all", default=1)
-def show(status: int = 1):
+              help="0 for undone, 1 for completed, 2 for all", default=2)
+def show(status: int = 2):
     if status == 0:
         tasks = get_undone_todos()
+    elif status == 1:
+        tasks = get_completed_todos()
     else:
         tasks = get_all_todos()
     console.print("[bold magenta]Todos[/bold magenta]!", "💻")

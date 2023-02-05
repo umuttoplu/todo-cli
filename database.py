@@ -40,6 +40,15 @@ def get_all_todos() -> List[Todo]:
     return todos
 
 
+def get_completed_todos() -> List[Todo]:
+    c.execute('select * from todos where status = 1')
+    results = c.fetchall()
+    todos = []
+    for result in results:
+        todos.append(Todo(*result))
+    return todos
+
+
 def get_undone_todos() -> List[Todo]:
     c.execute('select * from todos where status = 0')
     results = c.fetchall()
