@@ -1,4 +1,4 @@
-# todo-cli
+# todo-cli terminal commands
 
 ---
 
@@ -32,7 +32,7 @@ update given item #:
 ---
 complete given item #:
 
-	python3 todocli.py undone 3  
+	python3 todocli.py complete 3  
 ---
 undone an item:
 
